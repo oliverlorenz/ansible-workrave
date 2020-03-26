@@ -1,0 +1,11 @@
+- apt_repository:
+    repo: ppa:rob-caelers/workrave
+    state: present
+  become: yes
+
+- name: ensure firefox-esr is installed
+  apt:
+    name:
+      - workrave
+      - workrave-gnome
+  become: yes
