@@ -3,9 +3,12 @@
     state: present
   become: yes
 
-- name: ensure firefox-esr is installed
+- name: ensure workrave is installed
   apt:
     name:
       - workrave
       - workrave-gnome
   become: yes
+
+- name: ensure workrave is in autostart
+  command: cp /usr/share/applications/workrave.desktop ~/.config/autostart/workrave.desktop
